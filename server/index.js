@@ -22,6 +22,27 @@ app.get('/:productId/imageMain/bundle.js', (req, res) => {
   proxy.web(req, res, {target: imageMain});
 });
 
+app.get('/api/carousels/:id', (req, res) => {
+  proxy.web(req, res, {target: imageMain});
+});
+
+// =============================EXPERIENCES=============================
+app.get('/:productId/exp/bundle.js', (req, res) => {
+  proxy.web(req, res, {target: experiences});
+});
+app.get('/:id/exp/api', (req, res) => {
+  proxy.web(req, res, {target: experiences});
+});
+
+// =============================BEST NEARBY=============================
+app.get('/:productId/bestNearby/bundle.js', (req, res) => {
+  proxy.web(req, res, {target: bestNearby});
+});
+
+app.get('/:attractionId/api/nearbyattractions', (req, res) => {
+  proxy.web(req, res, {target: bestNearby});
+});
+
 // ===============================REVIEWS===============================
 app.get('/:productId/reviewsModule/bundle.js', (req, res) => {
   proxy.web(req, res, {target: reviews});
