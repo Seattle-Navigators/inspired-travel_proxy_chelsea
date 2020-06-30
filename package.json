@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/index.js",
-    "watch": "webpack --watch"
+    "linter": "eslint ./"
   },
   "repository": {
     "type": "git",
@@ -25,16 +25,14 @@
     "express": "^4.17.1",
     "http-proxy": "^1.18.1",
     "morgan": "^1.10.0",
-    "path": "^0.12.7",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
-    "@babel/preset-react": "^7.10.1",
-    "babel-loader": "^8.1.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.2",
+    "eslint-plugin-react-hooks": "^4.0.5"
   }
 }
