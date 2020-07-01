@@ -33,6 +33,9 @@ app.get('/:productId/exp/bundle.js', (req, res) => {
 app.get('/:id/exp/api', (req, res) => {
   proxy.web(req, res, { target: experiences });
 });
+app.get('/:id/fonts/*', (req, res) => {
+  proxy.web(req, res, { target: experiences });
+});
 
 // =============================BEST NEARBY=============================
 app.get('/:productId/bestNearby/bundle.js', (req, res) => {
