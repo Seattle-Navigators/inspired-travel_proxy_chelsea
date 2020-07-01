@@ -6,7 +6,7 @@ const httpProxy = require('http-proxy');
 const proxy = httpProxy.createProxyServer();
 const app = express();
 
-const imageMain = 'http://127.0.0.1:3000';
+const imageMain = 'http://127.0.0.1:3007';
 const experiences = 'http://127.0.0.1:3636';
 const bestNearby = 'http://127.0.0.1:3003';
 const reviews = 'http://127.0.0.1:3004';
@@ -21,8 +21,13 @@ app.use('/:productId', express.static(publicDir));
 app.get('/:productId/imageMain/bundle.js', (req, res) => {
   proxy.web(req, res, { target: imageMain });
 });
-
-app.get('/api/carousels/:id', (req, res) => {
+app.get('/:id/api/carousels', (req, res) => {
+  proxy.web(req, res, { target: imageMain });
+});
+app.patch('/:imgId/api/carousels/helpful', (req, res) => {
+  proxy.web(req, res, { target: imageMain });
+});
+app.patch('/:imgId/api/carousels/reported', (req, res) => {
   proxy.web(req, res, { target: imageMain });
 });
 
