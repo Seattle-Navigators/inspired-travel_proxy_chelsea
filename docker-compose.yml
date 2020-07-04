@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  proxy:
+    build: ./
+    depends_on:
+      - 'image_main'
+      - 'experiences'
+      - 'best_nearby'
+      - 'reviews'
+    ports:
+      - '80:80'
+
+  image_main:
+    image: cschmidt331/fec_proxy_server:image_main_service
+    depends_on:
+      - 'database'
+    ports:
+      - '3007:3007'
+
+  experiences:
+    image: cschmidt331/fec_proxy_server:experiences_service
+    depends_on:
+      - 'database'
+    ports:
+      - '3636:3636'
+
+  best_nearby:
+    image: cschmidt331/fec_proxy_server:best_nearby_service
+    depends_on:
+      - 'database'
+    ports:
+      - '3003:3003'
+
+  reviews:
+    image: cschmidt331/fec_proxy_server:reviews_service
+    depends_on:
+      - 'database'
+    ports:
+      - '3004:3004'
+
+  database:
+    image: mongo:4.2.7
+    ports:
+      - '27017:27017'
