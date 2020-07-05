@@ -6,11 +6,11 @@ const httpProxy = require('http-proxy');
 const proxy = httpProxy.createProxyServer();
 const app = express();
 
-const imageMain = 'http://127.0.0.1:3007';
-const experiences = 'http://127.0.0.1:3636';
-const bestNearby = 'http://127.0.0.1:3003';
-const reviews = 'http://127.0.0.1:3004';
-const proxyPort = 3006;
+const imageMain = 'http://image_main:3007';
+const experiences = 'http://experiences:3636';
+const bestNearby = 'http://best_nearby:3003';
+const reviews = 'http://reviews:3004';
+const proxyPort = 80;
 
 const publicDir = path.resolve(__dirname, '..', 'client', 'public');
 
