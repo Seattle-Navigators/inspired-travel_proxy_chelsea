@@ -1,1 +1,1 @@
-# tripadvisor_proxy-server_chelsea
+# inspired-travel_proxy_chelsea
